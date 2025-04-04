@@ -55,7 +55,7 @@ install(TARGETS Logger
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     PUBLIC_HEADER DESTINATION include
-    PRIVATE_HEADER DESTINATION include/private
+    PRIVATE_HEADER DESTINATION include
 )
 
 # Optionally install the license and readme
