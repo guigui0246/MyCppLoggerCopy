@@ -16,7 +16,7 @@ set(LOGGER_SOURCES
 
 # Public headers (API)
 set(PUBLIC_HEADERS
-    LoggerPub.hpp
+    Logger.hpp
 )
 
 # Private headers (not installed normally)
@@ -25,6 +25,12 @@ set(PRIVATE_HEADERS
     tools.hpp
     exports.hpp
 )
+
+# Remove warnings for unused variables in MSVC
+# This is a common warning in MSVC and can be ignored in this case
+if(MSVC)
+    add_compile_options(/wd4505)
+endif()
 
 # Build the shared library
 add_library(Logger SHARED ${LOGGER_SOURCES} ${PUBLIC_HEADERS})
