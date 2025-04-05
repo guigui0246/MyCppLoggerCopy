@@ -8,7 +8,22 @@
 #ifndef LOGGING_HPP_
     #define LOGGING_HPP_
 
-    #pragma warning(disable:4068)
+
+    #ifdef MSVC
+        #pragma warning(push)
+        #pragma warning(disable : 0)
+    #elif defined(__GNUC__)
+        #pragma GCC diagnostic push
+        #pragma GCC diagnostic ignored "-Wall"
+        #pragma GCC diagnostic ignored "-Wextra"
+        #pragma GCC diagnostic ignored "-Werror"
+    #elif defined(__clang__)
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Wall"
+        #pragma clang diagnostic ignored "-Wextra"
+        #pragma clang diagnostic ignored "-Werror"
+    #endif /* MSVC */
+
 
     #include <iostream>
     #include <string>
@@ -87,6 +102,14 @@ class COMMON_API Logger {
 
 #undef __needs_log_redefinition
 #define _needs_log_redefinition
+
+    #ifdef MSVC
+        #pragma warning(pop)
+    #elif defined(__GNUC__)
+        #pragma GCC diagnostic pop
+    #elif defined(__clang__)
+        #pragma clang diagnostic pop
+    #endif /* MSVC */
 
 #endif /* !LOGGING_HPP_ */
 
