@@ -16,7 +16,7 @@ set(LOGGER_SOURCES
 
 # Public headers (API)
 set(PUBLIC_HEADERS
-    Logger.hpp
+    LoggerPub.hpp
 )
 
 # Private headers (not installed normally)
