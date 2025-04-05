@@ -29,6 +29,10 @@ set(PRIVATE_HEADERS
 # Build the shared library
 add_library(Logger SHARED ${LOGGER_SOURCES} ${PUBLIC_HEADERS})
 
+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    target_compile_options(Logger PRIVATE -fPIC -Wno-error)
+endif()
+
 # Define preprocessor macro
 target_compile_definitions(Logger PRIVATE COMMON_EXPORTS)
 
