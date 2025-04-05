@@ -27,9 +27,11 @@ set(PRIVATE_HEADERS
 )
 
 # Remove warnings for unused variables in MSVC
-# This is a common warning in MSVC and can be ignored in this case
 if(MSVC)
+    # This is a common warning in MSVC and can be ignored in this case
     add_compile_options(/wd4505)
+    # This warning is for STL containers and can be ignored in this case
+    add_compile_options(/ws4251)
 endif()
 
 # Build the shared library
