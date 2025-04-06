@@ -16,14 +16,14 @@
         #pragma GCC diagnostic push
         #pragma GCC diagnostic ignored "-Wall"
         #pragma GCC diagnostic ignored "-Wextra"
-        #pragma GCC diagnostic ignored "-Wunknown-pragma"
+        #pragma GCC diagnostic ignored "-Wunknown-pragmas"
         #pragma GCC diagnostic ignored "-Wunused-function"
         #pragma GCC diagnostic ignored "-Wunused-result"
     #elif defined(__clang__)
         #pragma clang diagnostic push
         #pragma clang diagnostic ignored "-Wall"
         #pragma clang diagnostic ignored "-Wextra"
-        #pragma clang diagnostic ignored "-Wunknown-pragma"
+        #pragma clang diagnostic ignored "-Wunknown-pragmas"
         #pragma clang diagnostic ignored "-Wunused-function"
         #pragma clang diagnostic ignored "-Wunused-result"
         #endif /* MSVC */
